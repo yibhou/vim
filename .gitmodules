@@ -19,3 +19,15 @@
 [submodule "bundle/nerdtree-git-plugin"]
 	path = bundle/nerdtree-git-plugin
 	url = https://github.com/Xuyuanp/nerdtree-git-plugin.git
+[submodule "bundle/vim-hug-neovim-rpc"]
+	path = bundle/vim-hug-neovim-rpc
+	url = https://github.com/roxma/vim-hug-neovim-rpc.git
+[submodule "bundle/nvim-yarp"]
+	path = bundle/nvim-yarp
+	url = https://github.com/roxma/nvim-yarp.git
+[submodule "bundle/deoplete"]
+	path = bundle/deoplete
+	url = https://github.com/Shougo/deoplete.nvim.git
+[submodule "bundle/tern_for_vim"]
+	path = bundle/tern_for_vim
+	url = https://github.com/ternjs/tern_for_vim.git

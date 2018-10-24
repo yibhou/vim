@@ -43,3 +43,6 @@ map <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 
+" execute deoplete#enable()
+let g:deoplete#enable_at_startup = 1
+
