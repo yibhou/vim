@@ -39,3 +39,7 @@ set termguicolors
 let g:monokai_term_italic = 1
 let g:monokai_gui_italic = 1
 
+map <C-n> :NERDTreeToggle<CR>
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+
