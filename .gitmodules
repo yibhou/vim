@@ -31,3 +31,12 @@
 [submodule "bundle/tern_for_vim"]
 	path = bundle/tern_for_vim
 	url = https://github.com/ternjs/tern_for_vim.git
+[submodule "bundle/auto-pairs"]
+	path = bundle/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs.git
+[submodule "bundle/deoplete-ternjs"]
+	path = bundle/deoplete-ternjs
+	url = https://github.com/carlitux/deoplete-ternjs.git
+[submodule "bundle/vim-multiple-cursors"]
+	path = bundle/vim-multiple-cursors
+	url = https://github.com/terryma/vim-multiple-cursors.git

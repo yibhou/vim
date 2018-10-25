@@ -1,6 +1,4 @@
 
-" set filetype=nginx
-
 set encoding=utf-8
 " 整个单词断行处理
 set lbr
@@ -28,21 +26,44 @@ set expandtab
 set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
 set list
 
-execute pathogen#infect()
+" 代码提示使用浮动菜单，设置menu,preview同时打开顶部预览窗口
+set completeopt=menu
+
+let maplocalleader=','
 
 syntax on
 
 filetype plugin indent on
 
+execute pathogen#infect()
+
+" 主题
 colorscheme vim-monokai/colors/monokai
 set termguicolors
 let g:monokai_term_italic = 1
 let g:monokai_gui_italic = 1
 
-map <C-n> :NERDTreeToggle<CR>
+" 插件
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
+noremap <silent> <LocalLeader>n :NERDTreeToggle<CR>
 
-" execute deoplete#enable()
-let g:deoplete#enable_at_startup = 1
+let g:user_emmet_leader_key = '<C-y>'
+
+let g:SuperTabDefaultCompletionType = 'context'
+let g:SuperTabCompletionContexts =
+      \ ['s:ContextText', 's:ContextDiscover']
+let g:SuperTabContextTextOmniPrecedence =
+      \ ['&omnifunc', '&completefunc']
+let g:SuperTabContextDiscoverDiscovery =
+      \ ['&completefunc:<c-x><c-u>', '&omnifunc:<c-x><c-o>']
+
+let g:tern#command = ['tern']
+let g:tern#arguments = ['--persistent']
+let g:tern_map_keys = 1
+
+let g:deoplete#sources#ternjs#include_keywords = 1
+
+let g:deoplete#enable_at_startup = 0
+" autocmd InsertEnter * call deoplete#enable()
 
