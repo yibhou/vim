@@ -48,8 +48,6 @@ let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 noremap <silent> <LocalLeader>n :NERDTreeToggle<CR>
 
-let g:user_emmet_leader_key = '<C-y>'
-
 let g:SuperTabDefaultCompletionType = 'context'
 let g:SuperTabCompletionContexts =
       \ ['s:ContextText', 's:ContextDiscover']
@@ -58,6 +56,10 @@ let g:SuperTabContextTextOmniPrecedence =
 let g:SuperTabContextDiscoverDiscovery =
       \ ['&completefunc:<c-x><c-u>', '&omnifunc:<c-x><c-o>']
 
+let g:user_emmet_leader_key = '<C-y>'
+let g:user_emmet_settings = webapi#json#decode(join(
+      \ readfile(expand('$HOME/.vim/snippets.json')), '\n'))
+
 let g:tern#command = ['tern']
 let g:tern#arguments = ['--persistent']
 let g:tern_map_keys = 1
@@ -65,5 +67,5 @@ let g:tern_map_keys = 1
 let g:deoplete#sources#ternjs#include_keywords = 1
 
 let g:deoplete#enable_at_startup = 0
-" autocmd InsertEnter * call deoplete#enable()
+autocmd InsertEnter * call deoplete#enable()
 
