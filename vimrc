@@ -38,15 +38,37 @@ filetype plugin indent on
 execute pathogen#infect()
 
 " 主题
-colorscheme vim-monokai/colors/monokai
-set termguicolors
+set background=dark
+let g:solarized_termcolors=256
+colorscheme solarized
+call togglebg#map('<F5>')
+
+" colorscheme vim-monokai/colors/monokai
+" set termguicolors
 let g:monokai_term_italic = 1
 let g:monokai_gui_italic = 1
 
 " 插件
+augroup omnifunc
+  autocmd!
+  autocmd FileType html setlocal
+      \ omnifunc=htmlcomplete#CompleteTags
+  autocmd FileType css setlocal
+      \ omnifunc=csscomplete#CompleteCSS
+  autocmd FileType javascript setlocal
+      \ omnifunc=javascriptcomplete#CompleteJS
+augroup end
+
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 noremap <silent> <LocalLeader>n :NERDTreeToggle<CR>
+imap <silent> <LocalLeader>n <Esc>:NERDTreeToggle<CR>
+
+let g:user_emmet_complete_tag = 1
+let g:user_emmet_leader_key = '<C-y>'
+let g:user_emmet_settings = webapi#json#decode(join(
+      \ readfile(expand('$HOME/.vim/snippets*.json')), ''))
+let g:user_emmet_install_global = 1
 
 let g:SuperTabDefaultCompletionType = 'context'
 let g:SuperTabCompletionContexts =
@@ -55,10 +77,6 @@ let g:SuperTabContextTextOmniPrecedence =
       \ ['&omnifunc', '&completefunc']
 let g:SuperTabContextDiscoverDiscovery =
       \ ['&completefunc:<c-x><c-u>', '&omnifunc:<c-x><c-o>']
-
-let g:user_emmet_leader_key = '<C-y>'
-let g:user_emmet_settings = webapi#json#decode(join(
-      \ readfile(expand('$HOME/.vim/snippets.json')), '\n'))
 
 let g:tern#command = ['tern']
 let g:tern#arguments = ['--persistent']

@@ -34,3 +34,12 @@
 [submodule "bundle/deoplete-ternjs"]
 	path = bundle/deoplete-ternjs
 	url = https://github.com/carlitux/deoplete-ternjs.git
+[submodule "bundle/webapi"]
+	path = bundle/webapi
+	url = https://github.com/mattn/webapi-vim.git
+[submodule "bundle/vim-colors-solarized"]
+	path = bundle/vim-colors-solarized
+	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "bundle/YouCompleteMe"]
+	path = bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe.git
