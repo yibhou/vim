@@ -38,7 +38,7 @@ filetype plugin indent on
 execute pathogen#infect()
 
 " 主题
-set background=dark
+set background=light
 let g:solarized_termcolors=256
 colorscheme solarized
 call togglebg#map('<F5>')
@@ -47,6 +47,9 @@ call togglebg#map('<F5>')
 " set termguicolors
 let g:monokai_term_italic = 1
 let g:monokai_gui_italic = 1
+
+let g:airline_theme = 'luna'
+let g:airline_powerline_fonts = 1
 
 " 插件
 augroup omnifunc
