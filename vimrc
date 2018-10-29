@@ -28,8 +28,11 @@ set list
 
 " 代码提示使用浮动菜单，设置menu,preview同时打开顶部预览窗口
 set completeopt=menu
+" 代码差异标志更新时间
+set updatetime=1000
 
-let maplocalleader=','
+let mapleader=','
+let maplocalleader=mapleader
 
 syntax on
 
@@ -38,7 +41,7 @@ filetype plugin indent on
 execute pathogen#infect()
 
 " 主题
-set background=dark
+set background=light
 let g:solarized_termcolors=256
 colorscheme solarized
 call togglebg#map('<F5>')
@@ -69,6 +72,32 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 noremap <silent> <LocalLeader>n :NERDTreeToggle<CR>
 imap <silent> <LocalLeader>n <Esc>:NERDTreeToggle<CR>
 
+let g:gitgutter_enabled = 1
+let g:gitgutter_max_signs = 500
+let g:gitgutter_sign_added = '+'
+let g:gitgutter_sign_removed = '_'
+let g:gitgutter_sign_removed_first_line = '‾'
+let g:gitgutter_sign_modified = '*'
+let g:gitgutter_sign_modified_removed = '*_'
+let g:gitgutter_override_sign_column_highlight = 1
+let g:gitgutter_highlight_lines = 1
+let g:gitgutter_map_keys = 0
+nmap [g <Plug>GitGutterPrevHunk
+nmap ]g <Plug>GitGutterNextHunk
+nmap <Leader>gp <Plug>GitGutterPreviewHunk
+nmap <Leader>gs <Plug>GitGutterStageHunk
+nmap <Leader>gu <Plug>GitGutterUndoHunk
+omap gc <Plug>GitGutterTextObjectInnerPending
+xmap gc <Plug>GitGutterTextObjectInnerVisual
+highlight GitGutterAdd cterm=bold ctermbg=194 ctermfg=35
+highlight GitGutterDelete cterm=bold ctermbg=224 ctermfg=197
+highlight GitGutterChange cterm=bold ctermbg=195 ctermfg=39
+highlight DiffAdd cterm=none ctermbg=194 ctermfg=none
+highlight DiffDelete cterm=none ctermbg=224 ctermfg=none
+highlight DiffChange cterm=none ctermbg=195 ctermfg=none
+" highlight DiffChange cterm=none ctermbg=230 ctermfg=none
+" highlight DiffChange cterm=none ctermbg=231 ctermfg=none
+
 let g:signify_disable_by_default = 1
 let g:signify_vcs_list = ['git']
 let g:signify_realtime = 1
@@ -82,9 +111,6 @@ let g:signify_line_highlight = 1
 highlight SignifySignAdd cterm=bold ctermbg=194 ctermfg=35
 highlight SignifySignDelete cterm=bold ctermbg=224 ctermfg=197
 highlight SignifySignChange cterm=bold ctermbg=230 ctermfg=179
-highlight DiffAdd cterm=none ctermbg=194 ctermfg=none
-highlight DiffDelete cterm=none ctermbg=224 ctermfg=none
-highlight DiffChange cterm=none ctermbg=230 ctermfg=none
 
 let g:user_emmet_complete_tag = 1
 let g:user_emmet_leader_key = '<C-y>'
