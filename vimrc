@@ -38,18 +38,20 @@ filetype plugin indent on
 execute pathogen#infect()
 
 " 主题
-set background=light
+set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
 call togglebg#map('<F5>')
 
 " colorscheme vim-monokai/colors/monokai
 " set termguicolors
-let g:monokai_term_italic = 1
-let g:monokai_gui_italic = 1
+" let g:monokai_term_italic = 1
+" let g:monokai_gui_italic = 1
 
 let g:airline_theme = 'luna'
-let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:airline_powerline_fonts = 0
 
 " 插件
 augroup omnifunc
@@ -66,6 +68,23 @@ let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 noremap <silent> <LocalLeader>n :NERDTreeToggle<CR>
 imap <silent> <LocalLeader>n <Esc>:NERDTreeToggle<CR>
+
+let g:signify_disable_by_default = 1
+let g:signify_vcs_list = ['git']
+let g:signify_realtime = 1
+let g:signify_sign_add = '+'
+let g:signify_sign_delete = '_'
+let g:signify_sign_delete_first_line = '‾'
+let g:signify_sign_change = '*'
+let g:signify_sign_changedelete = '*'
+let g:signify_sign_show_count = 1
+let g:signify_line_highlight = 1
+highlight SignifySignAdd cterm=bold ctermbg=194 ctermfg=35
+highlight SignifySignDelete cterm=bold ctermbg=224 ctermfg=197
+highlight SignifySignChange cterm=bold ctermbg=230 ctermfg=179
+highlight DiffAdd cterm=none ctermbg=194 ctermfg=none
+highlight DiffDelete cterm=none ctermbg=224 ctermfg=none
+highlight DiffChange cterm=none ctermbg=230 ctermfg=none
 
 let g:user_emmet_complete_tag = 1
 let g:user_emmet_leader_key = '<C-y>'
