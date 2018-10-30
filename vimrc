@@ -84,14 +84,15 @@ let g:gitgutter_highlight_lines = 1
 let g:gitgutter_map_keys = 0
 nmap [g <Plug>GitGutterPrevHunk
 nmap ]g <Plug>GitGutterNextHunk
+omap gc <Plug>GitGutterTextObjectInnerPending
+xmap gc <Plug>GitGutterTextObjectInnerVisual
 nmap <Leader>gp <Plug>GitGutterPreviewHunk
 nmap <Leader>gs <Plug>GitGutterStageHunk
 nmap <Leader>gu <Plug>GitGutterUndoHunk
-omap gc <Plug>GitGutterTextObjectInnerPending
-xmap gc <Plug>GitGutterTextObjectInnerVisual
 highlight GitGutterAdd cterm=bold ctermbg=194 ctermfg=35
 highlight GitGutterDelete cterm=bold ctermbg=224 ctermfg=197
 highlight GitGutterChange cterm=bold ctermbg=195 ctermfg=39
+highlight link GitGutterChangeDelete GitGutterChange
 highlight DiffAdd cterm=none ctermbg=194 ctermfg=none
 highlight DiffDelete cterm=none ctermbg=224 ctermfg=none
 highlight DiffChange cterm=none ctermbg=195 ctermfg=none
@@ -133,5 +134,5 @@ let g:tern_map_keys = 1
 let g:deoplete#sources#ternjs#include_keywords = 1
 
 let g:deoplete#enable_at_startup = 0
-autocmd InsertEnter * call deoplete#enable()
+autocmd VimEnter * call deoplete#enable()
 
