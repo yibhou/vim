@@ -65,6 +65,8 @@ augroup omnifunc
       \ omnifunc=csscomplete#CompleteCSS
   autocmd FileType javascript setlocal
       \ omnifunc=javascriptcomplete#CompleteJS
+  autocmd FileType javascript setlocal
+      \ omnifunc=tern#Complete
 augroup end
 
 let g:NERDTreeDirArrowExpandable = '▸'
@@ -131,8 +133,9 @@ let g:tern#command = ['tern']
 let g:tern#arguments = ['--persistent']
 let g:tern_map_keys = 1
 
+let g:deoplete#sources#ternjs#tern_bin = 'tern'
 let g:deoplete#sources#ternjs#include_keywords = 1
 
-let g:deoplete#enable_at_startup = 0
-autocmd VimEnter * call deoplete#enable()
+let g:deoplete#enable_at_startup = 1
+" autocmd VimEnter * call deoplete#enable()
 
