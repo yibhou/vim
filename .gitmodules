@@ -1,6 +1,6 @@
 [submodule "bundle/supertab"]
 	path = bundle/supertab
-	url = git@github.com:ervandew/supertab.git
+	url = https://github.com/ervandew/supertab.git
 [submodule "colors/vim-monokai"]
 	path = colors/vim-monokai
 	url = https://github.com/crusoexia/vim-monokai.git
@@ -39,7 +39,7 @@
 	url = https://github.com/mattn/webapi-vim.git
 [submodule "bundle/vim-colors-solarized"]
 	path = bundle/vim-colors-solarized
-	url = git://github.com/altercation/vim-colors-solarized.git
+	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule "bundle/vim-airline"]
 	path = bundle/vim-airline
 	url = https://github.com/vim-airline/vim-airline.git
